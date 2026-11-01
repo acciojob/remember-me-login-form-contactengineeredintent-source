@@ -14,7 +14,11 @@ submitBtn.addEventListener("click", (e) => {
   let userName = document.querySelector("#username").value;
   let passWord = document.querySelector("#password").value;
   if (rememberMeBtn.checked) {
-    localStorage.setItem(`${userName}`, `${passWord}`);
+    let user = {
+      username: userName,
+      password: passWord,
+    };
+    localStorage.setItem(`${userName}`, JSON.stringify(user));
     existingLoginBtn.classList.remove("d-none");
     alert("credentials are stored in localStorage");
     window.location.reload();
@@ -28,9 +32,6 @@ submitBtn.addEventListener("click", (e) => {
 existingLoginBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let userName = document.querySelector("#username").value;
-  let passWord = document.querySelector("#password").value;
-
-  // console.log(userName);
-  // let displayValue = localStorage.getItem(`${userName}`);
-  alert(`Logged in as <${userName}>`);
+  let user = JSON.parse(localStorage.getItem(`${userName}`));
+  alert(`Logged in as <${user.username}>`);
 });
