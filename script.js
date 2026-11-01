@@ -19,7 +19,9 @@ submitBtn.addEventListener("click", (e) => {
     alert("credentials are stored in localStorage");
     window.location.reload();
   } else {
-    alert("Logged in as <username>");
+    alert("Logged in as <username>, credentials are not stored");
+    localStorage.clear();
+    window.location.reload();
   }
 });
 
