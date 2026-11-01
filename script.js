@@ -1,4 +1,3 @@
-//your JS code here. If required.
 let existingLoginBtn = document.querySelector("#existing");
 let rememberMeBtn = document.querySelector("#checkbox");
 let submitBtn = document.querySelector("#submit");
@@ -20,7 +19,7 @@ submitBtn.addEventListener("click", (e) => {
     alert("credentials are stored in localStorage");
     window.location.reload();
   } else {
-    alert(`Logged in as <${userName}>`);
+    alert("Logged in as <username>");
   }
 });
 
@@ -29,5 +28,5 @@ existingLoginBtn.addEventListener("click", (e) => {
   // let userName = document.querySelector("#username").value;
   // console.log(userName);
   // let displayValue = localStorage.getItem(`${userName}`);
-  alert(`Logged in as <${localStorage.key(0)}>`);
+  alert("Logged in as <saved username>");
 });
