@@ -19,7 +19,7 @@ submitBtn.addEventListener("click", (e) => {
     alert("credentials are stored in localStorage");
     window.location.reload();
   } else {
-    alert("Logged in as <username>, credentials are not stored");
+    alert(`Logged in as <${userName}>, credentials are not stored`);
     localStorage.clear();
     window.location.reload();
   }
@@ -27,8 +27,10 @@ submitBtn.addEventListener("click", (e) => {
 
 existingLoginBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  // let userName = document.querySelector("#username").value;
+  let userName = document.querySelector("#username").value;
+  let passWord = document.querySelector("#password").value;
+
   // console.log(userName);
   // let displayValue = localStorage.getItem(`${userName}`);
-  alert("Logged in as <saved username>");
+  alert(`Logged in as <${userName}>`);
 });
